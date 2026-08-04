@@ -1,0 +1,9 @@
+Algorithm: GEMM Simple
+
+Result Matrix:
+90 100 110 120 
+202 228 254 280 
+314 356 398 440 
+426 484 542 600 
+
+Time taken to run the code: 0.0027 ms
