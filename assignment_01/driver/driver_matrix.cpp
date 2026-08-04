@@ -150,6 +150,3 @@ int main()
 
     return 0;
 }
-
-//g++ -std=c++17 driver\driver_matrix.cpp src\GEMM_Simple.cpp src\GEMM_Blocking.cpp -o executables\gemm_compare.exe
-//executables\gemm_compare.exe
