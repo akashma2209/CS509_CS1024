@@ -53,7 +53,6 @@ void genCSR(const string &input)
         }
     }
   
-    int c = 1;
     for(auto file : filesystem::directory_iterator(input)) //Calling all file present in test folder with .txt extension
     {
         if(file.path().extension() != ".txt")
@@ -124,8 +123,7 @@ void genCSR(const string &input)
         fin >> word >> startVertex;
         fin.close();
         CSR graph = convertToCSR(scr, des, weight, edges, vertexs ); //Convertig to CSR
-        string out = output + "/output_" + to_string(c) + ".txt";
-        c++;
+        string out =output + "/" + file.path().filename().string();
 
         ofstream fout(out);
         if(!fout)

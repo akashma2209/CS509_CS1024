@@ -6,4 +6,4 @@ Result Matrix:
 314 356 398 440 
 426 484 542 600 
 
-Time taken to run the code: 0.0013 ms
+Time taken to run the code: 0.0005 ms

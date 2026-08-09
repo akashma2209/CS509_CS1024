@@ -1,0 +1,16 @@
+Algorithm: Bellman-Ford
+Source: 0
+
+Vertex Distance
+0 0
+1 -87
+2 -168
+3 -53
+4 -1
+5 -101
+6 -37
+7 -162
+8 22
+9 -113
+Negative cycle: none
+Execution time: 0.0008 ms
