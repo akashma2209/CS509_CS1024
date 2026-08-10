@@ -321,7 +321,7 @@ The following table summarizes the measured Floyd-Warshall results.
 ---
 
 
-# 11 Observations
+# 12 Observations
 
 ### 12.1 Bellman-Ford
 
