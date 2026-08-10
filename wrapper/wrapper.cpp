@@ -73,29 +73,22 @@ int main()
         cout << "      Select your Assignment\n";
         cout << "============================\n";
 
-        cout << "Press 1. For Testing CSR\n";
-        cout << "Press 2. Assignment 1\n";
-        cout << "Press 3. Assignment 2\n";
-        cout << "4. Exit\n";
+        cout << "Press 1. Assignment 1\n";
+        cout << "Press 2. Assignment 2\n";
+        cout << "Press 3. For Testing CSR\n";
+        cout << "Press 4. Exit\n";
 
         cout << "Enter your selection: ";
         cin >> choice;
 
         switch(choice)
         {
+            
             case '1':
-                cout << "\nTesting Common CSR...\n";
-
-                system("g++ -std=c++17 common\\csr\\test_csr.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o common\\csr\\executables\\csr_test.exe");
-
-                system(".\\common\\csr\\executables\\csr_test.exe");
-
-            break;
-            case '2':
                 assignment1();
                 break;
             
-            case '3':
+            case '2':
                 assignment2();
                 break;
 
@@ -103,6 +96,14 @@ int main()
                 cout << "Exiting...\n";
                 return 0;
             
+            case '3':
+                cout << "\nTesting Common CSR...\n";
+
+                system("g++ -std=c++17 common\\csr\\test_csr.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o common\\csr\\executables\\csr_test.exe");
+
+                system(".\\common\\csr\\executables\\csr_test.exe");
+
+            break;
             
 
             default:

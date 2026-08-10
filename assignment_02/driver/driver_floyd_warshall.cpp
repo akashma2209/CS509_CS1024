@@ -90,8 +90,8 @@ int main()
         auto end =chrono::high_resolution_clock::now(); // Stop timer
         double time =chrono::duration<double, milli>(end-start).count();
  
-        string outputFile =output + "/" + file.path().filename().string(); //Output file
-        ofstream fout(outputFile);
+        string out =output + "/" + file.path().filename().string(); //Output file
+        ofstream fout(out);
         if(!fout)
         {
             cout << "Cannot create output file." << "\n";
@@ -117,7 +117,7 @@ int main()
         cout << "Execution time: " << time << " ms" << "\n";  
         fout << "Execution time: " << time << " ms" << "\n";
         fout.close();
-        cout << "Output : " << outputFile << "\n";
+        cout << "Output : " << out << "\n";
     }
     return 0;
 }

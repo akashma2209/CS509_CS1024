@@ -113,8 +113,8 @@ int main()
         auto end = chrono::high_resolution_clock::now(); // Stop Bellman-Ford timing
         double time =chrono::duration<double, milli>(end - start ).count();
         
-        string outputFile =output + "/" +file.path().filename().string(); // Create output file
-        ofstream fout(outputFile);
+        string out =output + "/" +file.path().filename().string(); // Create output file
+        ofstream fout(out);
         if(!fout)
         {
             cout << "Cannot create output file."<< "\n";
