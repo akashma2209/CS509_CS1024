@@ -64,6 +64,32 @@ void assignment2()
     }
 }
 
+void assignment3()
+{
+    char choice;
+
+    cout << "\nAssignment 3\n-----------------\n";
+    cout << "1. MST - Kruskal and Prim\n";
+
+    cout << "Enter choice: ";
+    cin >> choice;
+
+    switch(choice)
+    {
+        case '1':
+            cout << "\nRunning MST...\n";
+
+            system("g++ -std=c++17 assignment_03\\driver\\driver_mst.cpp assignment_03\\src\\MST.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o assignment_03\\executables\\mst.exe");
+
+            system(".\\assignment_03\\executables\\mst.exe");
+
+            break;
+
+        default:
+            cout << "Invalid choice\n";
+    }
+}
+
 int main()
 {
     char choice;
@@ -75,8 +101,9 @@ int main()
 
         cout << "Press 1. Assignment 1\n";
         cout << "Press 2. Assignment 2\n";
-        cout << "Press 3. For Testing CSR\n";
-        cout << "Press 4. Exit\n";
+        cout << "Press 3. Assignment 3\n";
+        cout << "Press 4. For Testing CSR\n";
+        cout << "Press 5. Exit\n";
 
         cout << "Enter your selection: ";
         cin >> choice;
@@ -92,16 +119,20 @@ int main()
                 assignment2();
                 break;
 
-            case '4':
-                cout << "Exiting...\n";
-                return 0;
-            
             case '3':
+                assignment3();
+                break;
+
+            case '4':
                 cout << "\nTesting Common CSR...\n";
 
                 system("g++ -std=c++17 common\\csr\\test_csr.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o common\\csr\\executables\\csr_test.exe");
 
                 system(".\\common\\csr\\executables\\csr_test.exe");
+            
+            case '5':
+                cout << "Exiting...\n";
+                return 0;
 
             break;
             
