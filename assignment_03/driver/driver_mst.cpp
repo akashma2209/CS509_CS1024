@@ -64,8 +64,7 @@ int main()
         ifstream fin(file.path()); // Open CSR file
         if(!fin)
         {
-            cout << "Cannot open CSR file."
-                 << "\n";
+            cout << "Cannot open CSR file."<< "\n";
             continue;
         }
 
