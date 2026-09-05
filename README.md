@@ -32,7 +32,7 @@ Each assignment lives in its own folder with a dedicated README covering full de
 ```
 CS509_CS1024
 │
-├── README.md                  <- you are here
+├── README.md                  
 ├── Makefile
 │
 ├── wrapper/                   <- single entry point to run any assignment
@@ -50,7 +50,15 @@ CS509_CS1024
 │   ├── outputs/
 │   └── executables/
 │
-└── assignment_02/              <- Shortest path algorithms
+├── assignment_02/              <- Shortest path algorithms
+│   ├── README.md
+│   ├── driver/
+│   ├── src/
+│   ├── tests/
+│   ├── outputs/
+│   └── executables/
+│
+└── assignment_03/              <- Minimum Spanning Tree algorithms
     ├── README.md
     ├── driver/
     ├── src/
@@ -93,6 +101,17 @@ Implements and tests two classic shortest-path algorithms, both supporting negat
 - **Floyd-Warshall** – all-pairs shortest path using a dense distance matrix. Time complexity O(V³).
 
 Full details, algorithm steps, and test result tables: [`assignment_02/README.md`](./assignment_02/README.md)
+
+### Assignment 03 – Minimum Spanning Tree Algorithms
+
+Implements and tests two classic greedy Minimum Spanning Tree (MST) algorithms on the same weighted, undirected graph, built on top of the CSR graph representation (see `common/csr`).
+
+- **Kruskal's Algorithm** – edge-based approach that processes edges in non-decreasing order of weight and uses a Disjoint Set Union (DSU) / Union-Find structure to skip edges that would form a cycle. Time complexity O(E log E).
+- **Prim's Algorithm** – vertex/tree-based approach that starts from vertex `0` and repeatedly grows the tree by adding the minimum-weight edge connecting it to an outside vertex. Time complexity O(V² + E).
+
+Both algorithms are verified to produce the same total MST weight on every test graph (7 sizes, from 5 to 100,000 vertices). Kruskal's algorithm is faster on the larger graphs, while Prim's algorithm is faster on the smaller/medium graphs — Kruskal ends up roughly 1.72x faster than Prim on the 100,000-vertex test case.
+
+Full details, algorithm steps, and test result tables: [`assignment_03/README.md`](./assignment_03/README.md)
 
 ---
 
