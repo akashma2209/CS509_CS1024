@@ -13,7 +13,6 @@ Each assignment lives in its own folder with a dedicated README covering full de
 | Student Name | Akash Maurya |
 | Entry Number | 2026CSM1024 |
 
-
 ---
 
 ## Language and Environment
@@ -32,7 +31,7 @@ Each assignment lives in its own folder with a dedicated README covering full de
 ```
 CS509_CS1024
 │
-├── README.md                  
+├── README.md
 ├── Makefile
 │
 ├── wrapper/                   <- single entry point to run any assignment
@@ -58,7 +57,15 @@ CS509_CS1024
 │   ├── outputs/
 │   └── executables/
 │
-└── assignment_03/              <- Minimum Spanning Tree algorithms
+├── assignment_03/              <- Minimum Spanning Tree algorithms
+│   ├── README.md
+│   ├── driver/
+│   ├── src/
+│   ├── tests/
+│   ├── outputs/
+│   └── executables/
+│
+└── assignment_04/              <- Vertex Coloring and PageRank
     ├── README.md
     ├── driver/
     ├── src/
@@ -113,14 +120,25 @@ Both algorithms are verified to produce the same total MST weight on every test 
 
 Full details, algorithm steps, and test result tables: [`assignment_03/README.md`](./assignment_03/README.md)
 
+### Assignment 04 – Vertex Coloring and PageRank
+
+Implements and tests two graph algorithms, both built on top of the CSR graph representation (see `common/csr`).
+
+- **Vertex Coloring (Welsh-Powell)** – greedy heuristic that orders vertices by non-increasing degree and assigns each the smallest color not used by its already-colored neighbours, on an undirected graph. Since exact graph coloring is NP-hard, this does not guarantee the minimum chromatic number.
+- **PageRank** – iterative graph-ranking algorithm on a directed graph, using a damping factor of `0.85`, dangling-vertex handling, and convergence based on total rank change. Time complexity O(I(V + E)).
+
+Vertex Coloring successfully scaled up to 100,000 vertices / 500,000 edges (using 3–7 colors depending on graph structure). PageRank converged correctly (rank sum ≈ 1.0) up to 10,000 vertices, but the 50,000- and 100,000-vertex cases could not be completed on the available system due to the cost of repeated iteration over large graphs.
+
+Full details, algorithm steps, and test result tables: [`assignment_04/README.md`](./assignment_04/README.md)
+
 ---
 
 ## Common Components
 
-The `common/csr` folder holds a standalone, reusable CSR (Compressed Sparse Row) implementation that is shared across assignments (used by Bellman-Ford in Assignment 02) rather than being reimplemented per assignment.
+The `common/csr` folder holds a standalone, reusable CSR (Compressed Sparse Row) implementation that is shared across assignments — used by Bellman-Ford in Assignment 02, by both Kruskal's and Prim's algorithms in Assignment 03, and by both Vertex Coloring and PageRank in Assignment 04 — rather than being reimplemented per assignment.
 
 ---
 
 ## How Results Are Measured
 
-Across both assignments, only algorithm execution time is measured (I/O, memory allocation, and file handling are excluded from timing). Each algorithm is tested on a range of input sizes, from very small (5–10 elements/vertices) to large (thousands), to observe how execution time scales — matching the theoretical time complexity of each algorithm.
+Across all assignments, only algorithm execution time is measured (I/O, memory allocation, CSR generation, and file handling are excluded from timing). Each algorithm is tested on a range of input sizes, from very small (5–10 elements/vertices) to large (tens of thousands to 100,000+), to observe how execution time scales — matching the theoretical time complexity of each algorithm. Where a test case could not be completed within practical limits (e.g. the largest PageRank graphs in Assignment 04), this is reported explicitly rather than estimated.
