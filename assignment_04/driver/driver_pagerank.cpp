@@ -194,9 +194,3 @@ int main()
     cout << "========================================\n";
     return 0;
 }
-
-
-
-// g++ -std=c++17 assignment_04\driver\driver_pagerank.cpp assignment_04\src\PageRank.cpp common\csr\src\CSR.cpp common\csr\src\driver_csr.cpp -o assignment_04\executables\pagerank.exe
-
-//  .\assignment_04\executables\pagerank.exe

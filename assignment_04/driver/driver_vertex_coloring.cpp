@@ -119,6 +119,3 @@ int main()
     return 0;
 }
 
-// g++ -std=c++17 assignment_04\driver\driver_vertex_coloring.cpp assignment_04\src\Vertex_Coloring.cpp common\csr\src\CSR.cpp common\csr\src\driver_csr.cpp -o assignment_04\executables\vertex_coloring.exe
-
-// .\assignment_04\executables\vertex_coloring.exe

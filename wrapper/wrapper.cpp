@@ -34,7 +34,7 @@ void assignment1()
 void assignment2()
 {
     char choice;
-    cout << "\nAssignment 1\n-----------------\n";
+    cout << "\nAssignment 2\n-----------------\n";
     cout << "1. Bellman Ford\n";
     cout << "2. Floyd Warshall\n";
 
@@ -57,6 +57,7 @@ void assignment2()
             system("g++ -std=c++17 assignment_02\\driver\\driver_floyd_warshall.cpp assignment_02\\src\\Floyd_Warshall.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o assignment_02\\executables\\floyd_warshall.exe");
 
             system(".\\assignment_02\\executables\\floyd_warshall.exe");
+
             break;
 
         default:
@@ -90,6 +91,45 @@ void assignment3()
     }
 }
 
+void assignment4()
+{
+    char choice;
+
+    cout << "\nAssignment 4\n-----------------\n";
+    cout << "1. Greedy Vertex Coloring\n";
+    cout << "2. PageRank\n";
+    
+
+    cout << "Enter choice: ";
+    cin >> choice;
+
+    switch(choice)
+    {
+        case '1':
+            cout << "\nRunning Greedy Vertex Coloring...\n";
+
+            system("g++ -std=c++17 assignment_04\\driver\\driver_vertex_coloring.cpp assignment_04\\src\\Vertex_Coloring.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o assignment_04\\executables\\vertex_coloring.exe");
+
+            system(".\\assignment_04\\executables\\vertex_coloring.exe");
+
+            break;
+
+        case '2':
+            cout << "\nRunning PageRank...\n";
+
+            system("g++ -std=c++17 assignment_04\\driver\\driver_pagerank.cpp assignment_04\\src\\PageRank.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o assignment_04\\executables\\pagerank.exe");
+
+            system(".\\assignment_04\\executables\\pagerank.exe");
+
+            break;
+
+        
+
+        default:
+            cout << "Invalid choice\n";
+    }
+}
+
 int main()
 {
     char choice;
@@ -102,15 +142,15 @@ int main()
         cout << "Press 1. Assignment 1\n";
         cout << "Press 2. Assignment 2\n";
         cout << "Press 3. Assignment 3\n";
-        cout << "Press 4. For Testing CSR\n";
-        cout << "Press 5. Exit\n";
+        cout << "Press 4. Assignment 4\n";
+        cout << "Press 5. For Testing CSR\n";
+        cout << "Press 6. Exit\n";
 
         cout << "Enter your selection: ";
         cin >> choice;
 
         switch(choice)
         {
-            
             case '1':
                 assignment1();
                 break;
@@ -124,22 +164,26 @@ int main()
                 break;
 
             case '4':
+                assignment4();
+                break;
+
+            case '5':
                 cout << "\nTesting Common CSR...\n";
 
                 system("g++ -std=c++17 common\\csr\\test_csr.cpp common\\csr\\src\\CSR.cpp common\\csr\\src\\driver_csr.cpp -o common\\csr\\executables\\csr_test.exe");
 
                 system(".\\common\\csr\\executables\\csr_test.exe");
-            
-            case '5':
+
+                break;
+
+            case '6':
                 cout << "Exiting...\n";
                 return 0;
-
-            break;
-            
 
             default:
                 cout << "Invalid choice\n";
         }
     }
+
     return 0;
 }
