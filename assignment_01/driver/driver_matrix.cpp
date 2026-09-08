@@ -52,9 +52,9 @@ int** createMat(int r, int c)
 
 int main()
 {
-    string input = "tests/matrix"; //Location of all test case file
-    string simple_output= "outputs/matrix/simple"; //Location where output file of simple GEMM will be stored
-    string blocking_output = "outputs/matrix/blocking"; //Location where output file of Blocking GEMM will be stored
+    string input = "assignment_01/tests/matrix"; //Location of all test case file
+    string simple_output= "assignment_01/outputs/matrix/simple"; //Location where output file of simple GEMM will be stored
+    string blocking_output = "assignment_01/outputs/matrix/blocking"; //Location where output file of Blocking GEMM will be stored
     
     int count = 1;
     // Loop to read all test file inside the tests folder

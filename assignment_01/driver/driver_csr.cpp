@@ -35,8 +35,8 @@ void printCSR(ostream &out, CSR graph)
 int main()
 {
     int c=1;
-    string input = "tests/csr_graph"; //Location of all test case file
-    string output = "outputs/graph/csr"; //Location where output file of simple GEMM will be stored
+    string input = "assignment_01/tests/csr_graph"; //Location of all test case file
+    string output = "assignment_01/outputs/graph/csr"; //Location where output file of simple GEMM will be stored
 
     for (auto &file : fs::directory_iterator(input))
     {
